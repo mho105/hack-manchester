@@ -187,6 +187,8 @@ textarea[contenteditable] {
     float:left;
     margin: 0 10px 10px 0;
     list-style-type: none;
+    background-position: center;    
+    background-repeat: no-repeat; 
 }
 
 .tasks ul li h2 {
@@ -200,30 +202,37 @@ textarea[contenteditable] {
 
 .green {
     background:#8ddb78;
+    background-image: url('../img/icons/01.Home.png');
 }
 
 .orange {
     background: #f2c57c;
+    background-image: url('../img/icons/02.Shop.png');
 }
 
 .pink {
     background: #ffadc6;
+    background-image: url('../img/icons/03.Office.png');
 }
 
 .salmon {
     background: #f6828c;
+    background-image: url('../img/icons/04.Bank.png');
 }
 
 .purple {
     background: #483f66;
+    background-image: url('../img/icons/05.Tag.png');
 }
 
 .light-purple {
     background: #9179e4;
+    background-image: url('../img/icons/06.Tags.png');
 }
 
 .aqua {
     background: #559cad;
+    background-image: url('../img/icons/07.Wallet.png');
 }
 
 #sloth {
