@@ -15,9 +15,7 @@ var getTechUsageDuringBedTime = function (userId) {
         return usage.userId === userId && (techUsageBeforeWakeUp || techUsageAfterBedTime);
     });
 
-    return techUsage.map(function (t) {
-        return console.log(t.source + ' - ' + t.start);
-    });
+    return techUsage;
 };
 
 var getTechUsageDuringBedTimePrep = function (userId) {
@@ -27,9 +25,7 @@ var getTechUsageDuringBedTimePrep = function (userId) {
         return usage.userId === userId && usage.start.getHours() >= user.sleepHour - globals.prepHoursBeforeBed && usage.start.getMinutes() >= user.sleepMinute;
     });
 
-    return techUsage.map(function (t) {
-        return console.log(t.source + ' - ' + t.start);
-    });
+    return techUsage;
 };
 
 var getNightsTemperatureWithinRecommended = function (userId) {
@@ -39,21 +35,7 @@ var getNightsTemperatureWithinRecommended = function (userId) {
         return t.userId === userId && t.averageTemperature >= globals.minTemperatureRoom && t.averageTemperature <= globals.maxTemperatureRoom;
     });
 
-    return temperaturesAbove.map(function (t) {
-        return console.log(t.averageTemperature + ' celsius - ' + t.date);
-    });
-};
-
-var getNightsRoomTooBright = function (userId) {
-    var user = users.find(x => x.userId === userId);
-
-    var temperaturesAbove = temperatures.filter(function (t) {
-        return t.userId === userId && t.averageTemperature >= globals.minTemperatureRoom && t.averageTemperature <= globals.maxTemperatureRoom;
-    });
-
-    return temperaturesAbove.map(function (t) {
-        return console.log(t.averageTemperature + ' celsius - ' + t.date);
-    });
+    return temperaturesAbove;
 };
 
 var getNightsTemperatureOutsideRecommended = function (userId) {
@@ -63,9 +45,7 @@ var getNightsTemperatureOutsideRecommended = function (userId) {
         return t.userId === userId && t.averageTemperature < globals.minTemperatureRoom || t.averageTemperature > globals.maxTemperatureRoom;
     });
 
-    return temperaturesOutside.map(function (t) {
-        return console.log(t.averageTemperature + ' celsius - ' + t.date);
-    });
+    return temperaturesOutside;
 };
 
 var showNotificationBeforeSleep = function (userId) {
@@ -85,13 +65,49 @@ var showNotificationUsingAppBedTime = function (userId) {
     }
 };
 
+var calculatePoints = function (userId) {
+    var user = users.find(x => x.userId === userId);
+
+    var techUsageDuringBedTime = getTechUsageDuringBedTime(userId);
+    user.points -= techUsageDuringBedTime.length * 2;
+
+    var nightsTemperatureWithinRecommended = getNightsTemperatureWithinRecommended(userId);
+    user.points += nightsTemperatureWithinRecommended.length * 2;
+
+    var nightsTemperatureOutsideRecommended = getNightsTemperatureOutsideRecommended(userId);
+    user.points -= nightsTemperatureOutsideRecommended.length * 2;
+
+    return user.points;
+};
+
+var userIds = [1, 2, 3, 4];
+
+userIds.forEach(function (userId) {
+    var user = users.find(x => x.userId === userId);
+    console.log(user.userName + ' - points b4: ' + user.points + ' - points after: ' + calculatePoints(userId));
+});
+
 showNotificationBeforeSleep(1);
+
 showNotificationUsingAppBedTime(2);
+
+
 console.log('\nuser 1 tech usage past bed time');
-getTechUsagePastBedTime(1);
+getTechUsageDuringBedTime(1).map(function (t) {
+    return console.log(t.source + ' - ' + t.start);
+});
+
 console.log('\nuser 2 tech usage during prep time');
-getTechUsageDuringBedTimePrep(2);
+getTechUsageDuringBedTimePrep(2).map(function (t) {
+    return console.log(t.source + ' - ' + t.start);
+});
+
 console.log('\nuser 1 temperatures within recommended range');
-getNightsTemperatureWithinRecommended(1);
+getNightsTemperatureWithinRecommended(1).map(function (t) {
+    return console.log(t.averageTemperature + ' celsius - ' + t.date);
+});
+
 console.log('\nuser 1 temperatures outside recommended range');
-getNightsTemperatureOutsideRecommended(1);
+getNightsTemperatureOutsideRecommended(1).map(function (t) {
+    return console.log(t.averageTemperature + ' celsius - ' + t.date);
+});
