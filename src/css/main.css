@@ -262,3 +262,27 @@ textarea[contenteditable] {
     font-size: 30px;
     font-weight: bold;
 }
+
+.tick {
+    background-image: url('../img/tick.png');
+    width:62px;
+    height:62px;
+    display: block;
+    position: relative;
+    top:-170px;
+    right:-100px;
+    background-position: center;    
+    background-repeat: no-repeat; 
+}
+
+.cross {
+    background-image: url('../img/cross.png');
+    width:62px;
+    height:62px;
+    display: block;
+    position: relative;
+    top:-170px;
+    right:-100px;
+    background-position: center;    
+    background-repeat: no-repeat; 
+}
