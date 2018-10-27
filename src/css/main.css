@@ -1,3 +1,4 @@
+
 html,
 button,
 input,
@@ -9,118 +10,23 @@ textarea {
 body {
     font-size: 1em;
     line-height: 1.4;
-    background-image: url("../img/bg3.jpg");
+    background-image: url("../img/bg.jpg");
     background-size: 100%;
-
+    font-family: 'Fira Sans', sans-serif;
 }
 
-#menubody {
-
-}
-
-#menuToggle
-{
-  display: block;
-  position: relative;
-  top: 50px;
-  left: 15px;
-  z-index: 1;
-  -webkit-user-select: none;
-  user-select: none;
-  width: 75%;
-}
-
-#menuToggle input
-{
-  display: block;
-  width: 40px;
-  height: 32px;
-  position: absolute;
-  top: -7px;
-  left: -5px;
-  cursor: pointer;
-  opacity: 0;
-  z-index: 2;
-  -webkit-touch-callout: none;
-}
-
-#menuToggle span
-{
-  display: block;
-  width: 33px;
-  height: 4px;
-  margin-bottom: 5px;
-  position: relative;
-  background: #cdcdcd;
-  border-radius: 3px;
-  z-index: 1;
-  transform-origin: 4px 0px;
-  
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              opacity 0.55s ease;
-}
-
-#menuToggle span:first-child
-{
-  transform-origin: 0% 0%;
-}
-
-#menuToggle span:nth-last-child(2)
-{
-  transform-origin: 0% 100%;
-}
-#menuToggle input:checked ~ span
-{
-  opacity: 1;
-  transform: rotate(45deg) translate(-2px, -1px);
-  background: #232323;
-}
-#menuToggle input:checked ~ span:nth-last-child(3)
-{
-  opacity: 0;
-  transform: rotate(0deg) scale(0.2, 0.2);
-}
-#menuToggle input:checked ~ span:nth-last-child(2)
-{
-  transform: rotate(-45deg) translate(0, -1px);
-}
-
-#menu
-{
-  position: absolute;
-  width: 50%;
-  margin: -100px 0 0 -50px;
-  padding: 50px;
-  padding-top: 125px;
-  
-  background: #ededed;
-  list-style-type: none;
-  -webkit-font-smoothing: antialiased;
-  transform-origin: 0% 0%;
-  transform: translate(-100%, 0);
-  
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-}
-
-#menu li
-{
-  padding: 10px 0;
-  font-size: 25px;
-}
-#menuToggle input:checked ~ ul
-{
-  transform: none;
-}
 a {
     color: #00e;
 }
+
 a:visited {
     color: #551a8b;
 }
+
 a:hover {
     color: #06e;
 }
+
 img {
     vertical-align: middle;
 }
@@ -130,6 +36,10 @@ fieldset {
     margin: 0;
     padding: 0;
 }
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
 
 textarea {
     resize: vertical;
@@ -175,6 +85,10 @@ textarea[contenteditable] {
     visibility: hidden;
 }
 
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
 .visuallyhidden {
     border: 0;
     clip: rect(0 0 0 0);
@@ -186,6 +100,11 @@ textarea[contenteditable] {
     width: 1px;
 }
 
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
     clip: auto;
@@ -195,6 +114,10 @@ textarea[contenteditable] {
     position: static;
     width: auto;
 }
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
 
 .invisible {
     visibility: hidden;
@@ -209,6 +132,7 @@ textarea[contenteditable] {
 .clearfix:after {
     clear: both;
 }
+
 @media only screen and (min-width: 800px) {
     /* Style adjustments for viewports that meet the condition */
 }
@@ -217,3 +141,45 @@ textarea[contenteditable] {
        only screen and (min-resolution: 144dpi) {
     /* Style adjustments for viewports that meet the condition */
 }
+
+#top{
+height:360px;
+}
+
+.icon:nth-child(2) {
+    margin-right: 0;
+}
+
+.icon {
+    background-color: #e0e2e5;
+    width: 169px;
+    height: 169px;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+  }
+
+  .tasks {
+      height:380px;
+      overflow: auto;
+      padding: 0 30px;
+
+  }
+
+  .row{
+    /* margin: 0 auto;
+    text-align:center;
+    width: 100%; */
+    margin-bottom:10px;
+  }
+  
+  /* Clear floats after image containers */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
