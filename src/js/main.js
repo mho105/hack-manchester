@@ -5,11 +5,14 @@ var globals = require('./data/global.js');
 
 //var monolithService = function () {
 
-var getTechUsagePastBedTime = function (userId) {
+
+var getTechUsageDuringBedTime = function (userId) {
     var user = users.find(x => x.userId === userId);
 
     var techUsage = technologyUsage.filter(function (usage) {
-        return usage.userId === userId && usage.start.getHours() >= user.sleepHour && usage.start.getMinutes() >= user.sleepMinute;
+        var techUsageAfterBedTime = usage.start.getHours() >= user.sleepHour && usage.start.getMinutes() >= user.sleepMinute;
+        var techUsageBeforeWakeUp = usage.start.getHours() <= user.wakeUpHour && usage.start.getMinutes() <= user.wakeUpMinute;
+        return usage.userId === userId && (techUsageBeforeWakeUp || techUsageAfterBedTime);
     });
 
     return techUsage.map(function (t) {
