@@ -12,7 +12,7 @@ body {
     line-height: 1.4;
     background-image: url("../img/bg.jpg");
     background-size: 100%;
-    font-family: 'Fira Sans', sans-serif;
+    font-family: helvetica;
 }
 
 a {
@@ -181,13 +181,47 @@ textarea[contenteditable] {
 }
 
 .tasks ul li {
-    background:#666;
     height:160px;
     width:160px;
     border:1px sold red;
     float:left;
     margin: 0 10px 10px 0;
     list-style-type: none;
-    border-radius: 8px;
 }
 
+.tasks ul li h2 {
+    color:#fff;
+    text-align: center;
+    font-size: 17px;
+    margin-top: 130px;
+    font-weight:normal;
+    letter-spacing: 1px;
+}
+
+.green {
+    background:#8ddb78;
+}
+
+.orange {
+    background: #f2c57c;
+}
+
+.pink {
+    background: #ffadc6;
+}
+
+.salmon {
+    background: #f6828c;
+}
+
+.purple {
+    background: #483f66;
+}
+
+.light-purple {
+    background: #9179e4;
+}
+
+.aqua {
+    background: #559cad;
+}
