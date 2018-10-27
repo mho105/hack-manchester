@@ -235,6 +235,11 @@ textarea[contenteditable] {
     background-image: url('../img/icons/07.Wallet.png');
 }
 
+.marine {
+    background: #7d82b8;
+    background-image: url('../img/icons/08.Credit-Card.png');
+}
+
 #sloth {
     text-align: center;
     margin: 15px 0 0 0;
