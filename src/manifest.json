@@ -1,6 +1,6 @@
 {
-    "short_name": "Maps",
-    "name": "Google Maps",
+    "short_name": "InSleep",
+    "name": "InSleep",
     "icons": [
       {
         "src": "/images/icons-192.png",
@@ -13,9 +13,8 @@
         "sizes": "512x512"
       }
     ],
-    "start_url": "/",
+    "start_url": "/src/index.html",
     "background_color": "#3367D6",
     "display": "standalone",
-    "scope": "/",
     "theme_color": "#3367D6"
   }
