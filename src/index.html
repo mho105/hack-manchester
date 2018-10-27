@@ -2,7 +2,7 @@
 <html class="no-js">
     <head>
         <meta charset="utf-8">
-        <title></title>
+        <title>InSleep</title>
         <meta name="description" content="">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
@@ -15,6 +15,11 @@
         <link rel="apple-touch-icon-precomposed" href="img/touch/apple-touch-icon-57x57-precomposed.png">
         <link rel="shortcut icon" sizes="196x196" href="img/touch/touch-icon-196x196.png">
         <link rel="shortcut icon" href="img/touch/apple-touch-icon.png">
+
+        <link rel="manifest" href="/manifest.json">
+
+        <!--Font-->
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
         <!-- Tile icon for Win8 (144x144 + tile color) -->
         <meta name="msapplication-TileImage" content="img/touch/apple-touch-icon-144x144-precomposed.png">
@@ -47,21 +52,27 @@
         <script src="js/vendor/modernizr-2.7.1.min.js"></script>
     </head>
     <body>
+        <div id="container">
+            <div id="top">
+                <div id="sloth">
+                    <img src="img/sloth-small.png" />
+                    <div id="sloth-points">
+                        <div id="points">100</div> Sloth Points</div>
+                </div>
+            </div>
 
-        <!-- Add your site or application content here -->
-
-        <script src="js/vendor/jquery-2.1.0.min.js"></script>
-        <script src="js/helper.js"></script>
-        <script src="js/main.js"></script>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
+            <div class="tasks">
+                <ul>
+                    <li class="green"><h2>wake up</h2><span class="tick"></span></li>
+                    <li class="orange"><h2>alcohol</li>
+                    <li class="pink"><h2>caffeine</h2></li>
+                    <li class="salmon"><h2>get up</h2></li>
+                    <li class="purple"><h2>sleep hours</h2></li>
+                    <li class="light-purple"><h2>temperature</h2><span class="cross"></span></li>
+                    <li class="aqua"><h2>light</h2></li>
+                    <li class="marine"><h2>something</h2></li>
+                </ul>
+            </div>
+         </div>
     </body>
 </html>
