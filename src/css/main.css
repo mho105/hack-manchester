@@ -151,6 +151,7 @@ textarea[contenteditable] {
    top:0;
    height:40%;
    width:100%;
+   margin: 0 0 10px 0;
 }
 
 .icon:nth-child(2) {
@@ -169,7 +170,7 @@ textarea[contenteditable] {
     clear:both;
     position:fixed;
     bottom:0;
-    height:60%;
+    height:57%;
     width:100%;
     overflow:auto;
     padding:0 0 55px 0;
@@ -177,13 +178,12 @@ textarea[contenteditable] {
 
 .tasks ul {
     margin:0 0 0 42px;
-    padding:20px 0 0 0;
+    padding:0 0 0 0;
 }
 
 .tasks ul li {
     height:160px;
     width:160px;
-    border:1px sold red;
     float:left;
     margin: 0 10px 10px 0;
     list-style-type: none;
@@ -224,4 +224,9 @@ textarea[contenteditable] {
 
 .aqua {
     background: #559cad;
+}
+
+#sloth {
+    text-align: center;
+    margin: 15px 0 0 0;
 }
