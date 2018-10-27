@@ -142,8 +142,15 @@ textarea[contenteditable] {
     /* Style adjustments for viewports that meet the condition */
 }
 
-#top{
-height:360px;
+#container {
+    height:100%;
+}
+
+#top {
+   position:fixed;
+   top:0;
+   height:40%;
+   width:100%;
 }
 
 .icon:nth-child(2) {
@@ -158,28 +165,29 @@ height:360px;
     display: inline-block;
 }
 
-.column {
-    float: left;
-    width: 33.33%;
-  }
+.tasks {
+    clear:both;
+    position:fixed;
+    bottom:0;
+    height:60%;
+    width:100%;
+    overflow:auto;
+    padding:0 0 55px 0;
+}
 
-  .tasks {
-      height:380px;
-      overflow: auto;
-      padding: 0 30px;
+.tasks ul {
+    margin:0 0 0 40px;
+    padding:20px 0 0 0;
+}
 
-  }
+.tasks ul li {
+    background:#666;
+    height:160px;
+    width:160px;
+    border:1px sold red;
+    float:left;
+    margin: 0 10px 10px 0;
+    list-style-type: none;
+    border-radius: 8px;
+}
 
-  .row{
-    /* margin: 0 auto;
-    text-align:center;
-    width: 100%; */
-    margin-bottom:10px;
-  }
-  
-  /* Clear floats after image containers */
-  .row::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
