@@ -170,7 +170,7 @@ textarea[contenteditable] {
     clear:both;
     position:fixed;
     bottom:0;
-    height:57%;
+    height:50%;
     width:100%;
     overflow:auto;
     padding:0 0 55px 0;
@@ -245,6 +245,10 @@ textarea[contenteditable] {
     margin: 15px 0 0 0;
 }
 
+#sloth-img {
+
+}
+
 #sloth-points {
     position: absolute;
     top:10px;
@@ -285,4 +289,41 @@ textarea[contenteditable] {
     right:-100px;
     background-position: center;    
     background-repeat: no-repeat; 
+}
+
+#dates {
+    color:#fff;
+    font-size:12px;
+    margin: 5px 0 0 18px;
+}
+
+#dates ul {
+    margin:0;
+    padding:0;
+}
+
+#dates ul li {
+    float:left;
+    text-align: center;
+    margin:0 20px;
+    list-style-type: none;
+    letter-spacing: 1px;
+}
+
+
+#dates ul li span {
+    display:block;
+}
+
+.date {
+    background:#fff;
+    color:#000;
+    border-radius: 50%;
+    padding:4px 5px;
+    font-weight: bold;
+    border:5px solid transparent;
+}
+
+.selected-date {
+    border:5px solid #B1CFF2;
 }
