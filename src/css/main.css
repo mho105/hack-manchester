@@ -9,7 +9,13 @@ textarea {
 body {
     font-size: 1em;
     line-height: 1.4;
-    background-image: url("../img/bg2.jpg");
+    background-image: url("../img/bg3.jpg");
+    background-size: 100%;
+
+}
+
+#menubody {
+
 }
 
 #menuToggle
