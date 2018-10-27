@@ -6,8 +6,7 @@ var users  = [
         sleepMinute: 0,
         wakeUpHour: 6,
         wakeUpMinute: 0,
-        points: 100,
-        lastPointUpdate: new Date(2018, 01, 24, 23, 30)
+        points: 100
     },
     {
         userId: 2,
@@ -16,8 +15,7 @@ var users  = [
         sleepMinute: 21,
         wakeUpHour: 6,
         wakeUpMinute: 6,
-        points: 25,
-        lastPointUpdate: new Date(2018, 01, 24, 20, 30)
+        points: 25
     },
     {
         userId: 3,
@@ -26,8 +24,7 @@ var users  = [
         sleepMinute: 21,
         wakeUpHour: 6,
         wakeUpMinute: 6,
-        points: 35,
-        lastPointUpdate: new Date(2018, 01, 24, 20, 30)
+        points: 35
     },
     {
         userId: 4,
@@ -36,8 +33,7 @@ var users  = [
         sleepMinute: 21,
         wakeUpHour: 6,
         wakeUpMinute: 6,
-        points: 50,
-        lastPointUpdate: new Date(2018, 01, 24, 20, 30)
+        points: 50
     }
 ];
 
