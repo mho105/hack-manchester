@@ -432,162 +432,205 @@ a:hover
   transform: none;
 }
 
-article, 
-aside, 
-details, 
-figcaption, 
-figure, 
-footer, 
-header, 
-hgroup, 
-nav, 
-section {
-    display: block;
+.login-box {
+    background: #fff;
+    padding: 20px;
+    max-width: 280px;
+    margin: 25vh auto;
+    text-align: center;
+    letter-spacing: 1px;
+    position: relative;
+    border-radius: 10px;
 }
 
-html {
-    font-size: 100%;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
+.login-box:hover {
+	  box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-input:focus, 
-textarea:focus {
-    outline: none;
-}
-
-label, 
-select, 
-button, 
-input[type="submit"], 
-input[type="radio"], 
-input[type="checkbox"] 
-input[type="button"] {
-    cursor: pointer;
-}
-
-a, 
-a:visited, 
-a:active {
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: none;
-}
-
-::selection {
-    background: #ed327b;
-    color: #fff;
-}
-
-::-moz-selection {
-    background: #ed327b;
-    color: #fff;
-}
-
-* {
-    font-size:100%;
-    margin: 0;
+.login-box h2 {
+    margin: 20px 0 20px;
     padding: 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
+    text-transform: uppercase;
+    color: #4688F1;
+}
+
+.social-button {
+	  background-position: 25px 0px;
     box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: inline-block;
+    height: 50px;
+	  line-height: 50px;
+    text-align: left;
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align: middle;
+    width: 100%;
+	  border-radius: 3px;
+    margin: 10px auto;
+    outline: rgb(255, 255, 255) none 0px;
+    padding-left: 20%;
+    transition: all 0.2s cubic-bezier(0.72, 0.01, 0.56, 1) 0s;
+	  -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
 }
 
-* {
-  font-family:"Helvetica Neue", Helvetica, Arial;
+#facebook-connect {
+    background: rgb(255, 255, 255) url('https://eswarasai.com/projects/social-login/img/facebook.svg') no-repeat scroll 5px 0px / 30px 50px padding-box border-box;
+    border: 1px solid rgb(60, 90, 154);
 }
 
-h5 {
-  text-align:center;
-  margin-top:5px;
-  color:rgba(0,0,0,.3);
+#facebook-connect:hover {
+	  border-color: rgb(60, 90, 154);
+	  background: rgb(60, 90, 154) url('https://eswarasai.com/projects/social-login/img/facebook-white.svg') no-repeat scroll 5px 0px / 30px 50px padding-box border-box;
+	  -webkit-transition: all .8s ease-out;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease-out;
 }
 
-h5 > a,a:visited {
-  color:#fff;
-  text-decoration:underline;
+#facebook-connect span {
+	  box-sizing: border-box;
+    color: rgb(60, 90, 154);
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    border: 0px none rgb(255, 255, 255);
+    outline: rgb(255, 255, 255) none 0px;
+	  -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
 }
 
-h5 > a:hover {
-  text-decoration:none;
+#facebook-connect:hover span {
+	  color: #FFF;
+	  -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
 }
 
-form {
-  background:#fff;
-  border-radius:6px;
-  padding:20px;
-  padding-top:30px;
-  width:300px;
-  margin:50px auto;
-  box-shadow:15px 15px 0px rgba(0,0,0,.1);
+#google-connect {
+    background: rgb(255, 255, 255) url('https://eswarasai.com/projects/social-login/img/google-plus.png') no-repeat scroll 5px 0px / 50px 50px padding-box border-box;
+    border: 1px solid rgb(220, 74, 61);
 }
 
-h1 {
-  text-align:center;
-  font-size:1.4em;
-  font-weight:700;
-  color:#ccc;
-  margin-bottom:24px;
+#google-connect:hover {
+	  border-color: rgb(220, 74, 61);
+	  background: rgb(220, 74, 61) url('https://eswarasai.com/projects/social-login/img/google-plus-white.png') no-repeat scroll 5px 0px / 50px 50px padding-box border-box;
+	  -webkit-transition: all .8s ease-out;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease-out;
 }
 
-span {
-  font-weight:200;
+#google-connect span {
+	  box-sizing: border-box;
+    color: rgb(220, 74, 61);
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    border: 0px none rgb(220, 74, 61);
+    outline: rgb(255, 255, 255) none 0px;
+	  -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
 }
 
-input {
-  width:100%;
-  background:#f5f5f5;
-  border:0;
-  padding:20px;
-  border-radius:6px;
-  margin-bottom:10px;
-  border:1px solid #eee;
+#google-connect:hover span {
+	  color: #FFF;
+	  -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
 }
 
-.btn {
-  position:relative;
-  width:100%;
-  padding:20px;
-  border-radius:6px;
-  border:0;
-  background:#f26964;
-  font-size:1.2em;
-  color:#fff;
-  text-shadow:1px 1px 0px rgba(0,0,0,.1);
-  box-shadow:0px 3px 0px #c1524e;
+#twitter-connect {
+    background: rgb(255, 255, 255) url('https://eswarasai.com/projects/social-login/img/twitter.png') no-repeat scroll 5px 1px / 45px 45px padding-box border-box;
+    border: 1px solid rgb(85, 172, 238);
 }
 
-.btn:active {
-  top:3px;
-  box-shadow:none;
+#twitter-connect:hover {
+	  border-color: rgb(85, 172, 238);
+	  background: rgb(85, 172, 238) url('https://eswarasai.com/projects/social-login/img/twitter-white.png') no-repeat scroll 5px 1px / 45px 45px padding-box border-box;
+	  -webkit-transition: all .8s ease-out;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease-out;
 }
 
-h6 {
-  text-align:center;
-  padding:20px;
-  padding-top:35px;
-  color:#777;
-  cursor:pointer;
+#twitter-connect span {
+	  box-sizing: border-box;
+    color: rgb(85, 172, 238);
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    border: 0px none rgb(220, 74, 61);
+    outline: rgb(255, 255, 255) none 0px;
+	  -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
 }
 
-.social {
-  display:none;
+#twitter-connect:hover span {
+	  color: #FFF;
+	  -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
 }
 
-.fb {
-  margin-top:15px;
-  background:#3b5998;
-  box-shadow:0px 3px 0px #2c416e;
+#linkedin-connect {
+    background: rgb(255, 255, 255) url('https://eswarasai.com/projects/social-login/img/linkedin.svg') no-repeat scroll 13px 0px / 28px 45px padding-box border-box;
+    border: 1px solid rgb(0, 119, 181);
 }
 
-.tw {
-  background:#00acee;
-  box-shadow:0px 3px 0px #008dc3;
+#linkedin-connect:hover {
+	  border-color: rgb(0, 119, 181);
+	  background: rgb(0, 119, 181) url('https://eswarasai.com/projects/social-login/img/linkedin-white.svg') no-repeat scroll 13px 0px / 28px 45px padding-box border-box;
+	  -webkit-transition: all .8s ease-out;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease-out;
 }
 
-.google {
-  background:#db4a39;
-  box-shadow:0px 3px 0px #b93f31;
+#linkedin-connect span {
+	  box-sizing: border-box;
+    color: rgb(0, 119, 181);
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    border: 0px none rgb(0, 119, 181);
+    outline: rgb(255, 255, 255) none 0px;
+	  -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+#linkedin-connect:hover span {
+	  color: #FFF;
+	  -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
 }
