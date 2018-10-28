@@ -34,6 +34,7 @@ function init() {
 
     detectMovement();
     detectLight();
+    changeSlothPic();
 }
 
 function changeSlothPic() {
