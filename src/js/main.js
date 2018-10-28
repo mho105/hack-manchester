@@ -22,14 +22,28 @@ function init() {
         detectGym();
         detectCoffee();
         detectOutside();
+
+        changeSlothPic();
     }
 
     function checkTwitter() {
         detectTwitter();
+
+        changeSlothPic();
     }
 
     detectMovement();
     detectLight();
+}
+
+function changeSlothPic() {
+    var image = document.getElementById("sloth-img");
+
+    if (points < 50)
+        image.src = 'img/sloth-small.png';
+
+    if (points >= 50)
+        image.src = 'img/sloth-happy.png';
 }
 
 function detectGym() {
