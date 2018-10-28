@@ -17,7 +17,7 @@ function init() {
 }
 
 function detectMovement() {
-    window.addEventListener("devicemotion", handleMotion, true);
+    var listener = window.addEventListener("devicemotion", handleMotion, true);
 
     var lastX, lastY, lastZ;
     var moveCounter = 0;
@@ -54,6 +54,7 @@ function detectMovement() {
                 addCross('device');
                 subtractPoints()
                 moveCounter = 0;
+                window.removeEventListener('devicemotion', listener);
             }
     
             lastX = acc.x;
