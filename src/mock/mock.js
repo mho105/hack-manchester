@@ -15,7 +15,7 @@ function changeLocation() {
         window.localStorage.setItem('gym', true);
     } 
     
-    if (location = 'outside') {
+    if (location === 'outside') {
         window.localStorage.setItem('outside', true);
     }
 }

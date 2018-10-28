@@ -7,11 +7,13 @@ var wakeTime = new Date('2018-10-27T08:00:00');
 window.localStorage.setItem('coffee', false);
 window.localStorage.setItem('gym', false);
 window.localStorage.setItem('outside', false);
+window.localStorage.setItem('twitter', false);
 
 var points = 50;
+var hasGym, hasCoffee, hasOutside, hasTwitter = false;
 
 function init() {
-    var intervalID = window.setInterval(poll, 3000);
+    var intervalID = window.setInterval(poll, 1000);
 
     function poll() {
         detectGym();
@@ -24,31 +26,34 @@ function init() {
 }
 
 function detectGym() {
-    if(window.localStorage.getItem('gym') == 'true') {
+    if(!hasGym && window.localStorage.getItem('gym') == 'true') {
         addTick('gym');
         addPoints();
+        hasGym = true;
     }
 }
 
 function detectCoffee() {
-    console.log(window.localStorage.getItem('coffee'));
-    if(window.localStorage.getItem('coffee') == 'true') {
+    if(!hasCoffee && window.localStorage.getItem('coffee') == 'true') {
         addCross('coffee');
         subtractPoints();
+        hasCoffee = true;
     }
 }
 
 function detectOutside() {
-    if(window.localStorage.getItem('outside') == 'true') {
+    if(!hasOutside && window.localStorage.getItem('outside') == 'true') {
         addTick('outside');
         addPoints();
+        hasOutside = true;
     }
 }
 
 function detectTwitter() {
-    if(window.localStorage.getItem('twitter') == 'true') {
+    if(!hasTwitter && window.localStorage.getItem('twitter') == 'true') {
         addCross('twitter');
         subtractPoints();
+        hasTwitter = true;
     }
 }
 
@@ -119,7 +124,7 @@ function subtractPoints() {
     document.getElementById('points').innerText = points;
 }
 
-function subtractPoints() {
+function addPoints() {
     points = points + 10;
     document.getElementById('points').innerText = points;
 }
