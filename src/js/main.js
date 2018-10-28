@@ -1,5 +1,6 @@
 
 init();
+var timeInterval = 10000; //10s
 
 var sleepTime = new Date('2018-10-26T22:00:00');
 var wakeTime = new Date('2018-10-27T08:00:00');
@@ -14,11 +15,15 @@ var hasGym, hasCoffee, hasOutside, hasTwitter = false;
 
 function init() {
     var intervalID = window.setInterval(poll, 1000);
+    var intervalID2 = window.setInterval(checkTwitter, 5000);
 
     function poll() {
         detectGym();
         detectCoffee();
         detectOutside();
+    }
+
+    function checkTwitter() {
         detectTwitter();
     }
 
@@ -51,11 +56,24 @@ function detectOutside() {
 }
 
 function detectTwitter() {
-    if(!hasTwitter && window.localStorage.getItem('twitter') == 'true') {
-        addCross('twitter');
-        subtractPoints();
-        hasTwitter = true;
-    }
+    var tweets = JSON.parse(localStorage.getItem("tweets"));
+    var now = new Date();
+    var tenSecondsAgo = new Date(now.setSeconds(now.getSeconds() - 10));
+
+    var tweetsInLastSeconds = tweets.filter(function (tweetTime) {
+        return new Date(tweetTime) >= tenSecondsAgo;
+    });
+
+    if (tweetsInLastSeconds.length)
+        subtractPoints(10);
+    else
+        addPoints(2);
+
+    //if(!hasTwitter && window.localStorage.getItem('twitter') == 'true') {
+    //    addCross('twitter');
+    //    subtractPoints();
+    //    hasTwitter = true;
+    //}
 }
 
 function detectMovement() {
@@ -130,13 +148,19 @@ function addTick(id) {
     element.classList.add('tick');
 }
 
-function subtractPoints() {
-    points = points - 10;
+function subtractPoints(toSubtract) {
+    if (!toSubtract)
+        toSubtract = 10;
+
+    points = points - toSubtract;
     document.getElementById('points').innerText = points;
 }
 
-function addPoints() {
-    points = points + 10;
+function addPoints(toAdd) {
+    if (!toAdd)
+        toAdd = 10;
+
+    points = points + toAdd;
     document.getElementById('points').innerText = points;
 }
 
