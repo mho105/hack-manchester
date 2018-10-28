@@ -2,7 +2,8 @@
 function tweet() {
     var tweets = JSON.parse(localStorage.getItem("tweets"));
     if (tweets == null) tweets = [];
-    tweets.push(new Date());
+    var txt = document.getElementById("txt-area");
+    tweets.push({ txt: txt.value, date: new Date() });
     localStorage.setItem("tweets", JSON.stringify(tweets));
     
     window.localStorage.setItem('twitter', true);
