@@ -202,27 +202,27 @@ textarea[contenteditable] {
 
 .green {
     background:#8ddb78;
-    background-image: url('../img/icons/01.Home.png');
+    background-image: url('../img/icons/27.Phone.png');
 }
 
 .orange {
     background: #f2c57c;
-    background-image: url('../img/icons/02.Shop.png');
+    background-image: url('../img/icons/38.Location-Pin.png');
 }
 
 .pink {
     background: #ffadc6;
-    background-image: url('../img/icons/03.Office.png');
+    background-image: url('../img/icons/39.Heart.png');
 }
 
 .salmon {
     background: #f6828c;
-    background-image: url('../img/icons/04.Bank.png');
+    background-image: url('../img/icons/02.Shop.png');
 }
 
 .purple {
     background: #483f66;
-    background-image: url('../img/icons/05.Tag.png');
+    background-image: url('../img/icons/30.User.png');
 }
 
 .light-purple {
