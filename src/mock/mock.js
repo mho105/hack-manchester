@@ -24,3 +24,13 @@ function changeLocation() {
         window.localStorage.setItem('outside', true);
     }
 }
+
+function changeLight() {
+    window.localStorage.setItem('light', true);
+}
+
+function changeDark() {
+    window.localStorage.setItem('light', false);
+}
+
+

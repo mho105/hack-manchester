@@ -2,6 +2,12 @@
 <html>
     <head>
         <title>InSleep Mock</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Roboto', sans-serif;
+            }
+        </style>
     </head>
 
     <body>
@@ -22,6 +28,11 @@
             <textarea></textarea>
             <button>Tweet</button>
         </form>
+
+        <h2>Light</h2>
+        <a href="light" style="padding: 10px; background:#f4e242;" onclick="changeLight();return false;">Light</a>
+        <a href="dark" style="padding: 10px; background:#000; color:#fff" onclick="changeDark();return false;">Dark</a>
+
         <script type="text/javascript" src="mock.js"></script>
     </body>
 </html>

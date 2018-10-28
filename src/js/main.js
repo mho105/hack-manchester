@@ -10,9 +10,10 @@ window.localStorage.setItem('gym', false);
 window.localStorage.setItem('outside', false);
 window.localStorage.setItem('twitter', false);
 window.localStorage.setItem('tweets', JSON.stringify([]));
+window.localStorage.setItem('light', true);
 
 var points = 50;
-var hasGym, hasCoffee, hasOutside, hasTwitter = false;
+var hasGym, hasCoffee, hasOutside, hasTwitter, hasLight = false;
 
 function init() {
     var intervalID = window.setInterval(poll, 1000);
@@ -22,6 +23,7 @@ function init() {
         detectGym();
         detectCoffee();
         detectOutside();
+        detectLight();
     }
 
     function checkTwitter() {
@@ -129,13 +131,11 @@ function detectMovement() {
 }
 
 function detectLight() {
-    window.addEventListener('devicelight', function(event) {
-        if (event.value < 100) {
-            addTick('light');
-        } else {
-            addCross('light');
-        }
-    });
+    if(!hasLight && window.localStorage.getItem('light') == 'false') {
+        addTick('light');
+        addPoints();
+        hasLight = true;
+    }
 }
 
 
