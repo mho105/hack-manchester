@@ -5,6 +5,8 @@ var sleepTime = new Date('2018-10-26T22:00:00');
 var wakeTime = new Date('2018-10-27T08:00:00');
 
 window.localStorage.setItem('coffee', false);
+window.localStorage.setItem('gym', false);
+window.localStorage.setItem('outside', false);
 
 var points = 50;
 
@@ -22,7 +24,8 @@ function init() {
 
 function detectGym() {
     if(window.localStorage.getItem('gym') == 'true') {
-
+        addTick('gym');
+        addPoints();
     }
 }
 
@@ -30,12 +33,14 @@ function detectCoffee() {
     console.log(window.localStorage.getItem('coffee'));
     if(window.localStorage.getItem('coffee') == 'true') {
         addCross('coffee');
+        subtractPoints();
     }
 }
 
 function detectOutside() {
     if(window.localStorage.getItem('outside') == 'true') {
-
+        addTick('outside');
+        addPoints();
     }
 }
 
@@ -96,8 +101,18 @@ function addCross(id) {
     element.classList.add('cross');
 }
 
+function addTick(id) {
+    var element = document.getElementById(id);
+    element.classList.add('tick');
+}
+
 function subtractPoints() {
     points = points - 10;
+    document.getElementById('points').innerText = points;
+}
+
+function subtractPoints() {
+    points = points + 10;
     document.getElementById('points').innerText = points;
 }
 
