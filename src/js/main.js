@@ -4,6 +4,8 @@ init();
 var sleepTime = new Date('2018-10-26T22:00:00');
 var wakeTime = new Date('2018-10-27T08:00:00');
 
+var points = 50;
+
 function init() {
     var intervalID = window.setInterval(poll, 5000);
 
@@ -11,7 +13,7 @@ function init() {
         calculatePoints();
     }
 
-    detectMovement() ;
+    detectMovement();
 }
 
 function detectMovement() {
@@ -28,11 +30,9 @@ function detectMovement() {
     
         if(!acc.x) return;
     
-        //only log if x,y,z > 1
         if(Math.abs(acc.x) >= 1 &&
         Math.abs(acc.y) >= 1 &&
         Math.abs(acc.z) >=1) {
-            //console.log('motion', acc);
             if(!lastX) {
                 lastX = acc.x;
                 lastY = acc.y;
@@ -51,18 +51,28 @@ function detectMovement() {
             }
     
             if(moveCounter > 2) {
-                var element = document.getElementById('device');
-                element.classList.add('cross');
+                addCross('device');
+                subtractPoints()
                 moveCounter = 0;
             }
     
             lastX = acc.x;
             lastY = acc.y;
             lastZ = acc.z;
-            
         }
     }
 }
+
+
+function addCross(id) {
+    var element = document.getElementById(id);
+    element.classList.add('cross');
+}
+
+function subtractPoints() {
+    points = points - 10;
+}
+
 
 function calculatePoints() {
 
