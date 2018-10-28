@@ -71,8 +71,8 @@ function addCross(id) {
 
 function subtractPoints() {
     points = points - 10;
+    document.getElementById('points').innerText = points;
 }
-
 
 function calculatePoints() {
 
@@ -87,16 +87,12 @@ var getTwitterUsage = function () {
     var tweets = JSON.parse(window.localStorage.getItem('tweets'));
 
     tweets.forEach(tweet => {
-        //console.log(sleepTime, wakeTime, tweet.date);
-
         if(tweet.date >= sleepTime && tweet.date <= wakeTime) {
             console.log('tweet');
             var element = document.getElementById('twitter');
             element.classList.add('cross');
             return true;
         }
-
-        
     });
 
     return false;
