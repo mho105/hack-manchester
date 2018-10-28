@@ -51,7 +51,8 @@ function detectMovement() {
             }
     
             if(moveCounter > 2) {
-                console.log('SHAKE!!!');
+                var element = document.getElementById('device');
+                element.classList.add('cross');
                 moveCounter = 0;
             }
     
