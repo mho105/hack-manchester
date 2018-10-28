@@ -23,6 +23,7 @@ function init() {
     }
 
     detectMovement();
+    detectLight();
 }
 
 function detectGym() {
@@ -106,6 +107,16 @@ function detectMovement() {
             lastZ = acc.z;
         }
     }
+}
+
+function detectLight() {
+    window.addEventListener('devicelight', function(event) {
+        if (event.value < 100) {
+            addTick('light');
+        } else {
+            addCross('light');
+        }
+    });
 }
 
 
