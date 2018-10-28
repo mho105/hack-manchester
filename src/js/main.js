@@ -39,12 +39,19 @@ function init() {
 
 function changeSlothPic() {
     var image = document.getElementById("sloth-img");
+    var score = document.getElementById("sloth-points");
 
-    if (points < 50)
+    if (points < 50) {
+        score.style.backgroundColor = 'rgba(255, 0, 0, 0.7)';
         image.src = 'img/sloth-small.png';
+    }
 
-    if (points >= 50)
+
+    if (points >= 50) {
+        score.style.backgroundColor = 'rgba(0,102,0,1)';
         image.src = 'img/sloth-happy.png';
+    }
+       
 }
 
 function detectGym() {
