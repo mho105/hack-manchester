@@ -21,6 +21,7 @@ function detectMovement() {
 
     var lastX, lastY, lastZ;
     var moveCounter = 0;
+    var hasDetected = false;
 
     function handleMotion(e) {
         let acc = e.acceleration;
@@ -51,10 +52,12 @@ function detectMovement() {
             }
     
             if(moveCounter > 2) {
-                addCross('device');
-                subtractPoints()
+                if(!hasDetected) {
+                 addCross('device');
+                 subtractPoints();
+                 hasDetected = true;
+                }
                 moveCounter = 0;
-                window.removeEventListener('devicemotion', listener);
             }
     
             lastX = acc.x;
