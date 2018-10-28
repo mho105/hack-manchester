@@ -9,6 +9,7 @@ window.localStorage.setItem('coffee', false);
 window.localStorage.setItem('gym', false);
 window.localStorage.setItem('outside', false);
 window.localStorage.setItem('twitter', false);
+window.localStorage.setItem('tweets', JSON.stringify([]));
 
 var points = 50;
 var hasGym, hasCoffee, hasOutside, hasTwitter = false;
