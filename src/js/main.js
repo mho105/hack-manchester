@@ -17,6 +17,7 @@ function init() {
         detectGym();
         detectCoffee();
         detectOutside();
+        detectTwitter();
     }
 
     detectMovement();
@@ -41,6 +42,13 @@ function detectOutside() {
     if(window.localStorage.getItem('outside') == 'true') {
         addTick('outside');
         addPoints();
+    }
+}
+
+function detectTwitter() {
+    if(window.localStorage.getItem('twitter') == 'true') {
+        addCross('twitter');
+        subtractPoints();
     }
 }
 
