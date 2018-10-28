@@ -4,16 +4,39 @@ init();
 var sleepTime = new Date('2018-10-26T22:00:00');
 var wakeTime = new Date('2018-10-27T08:00:00');
 
+window.localStorage.setItem('coffee', false);
+
 var points = 50;
 
 function init() {
-    var intervalID = window.setInterval(poll, 5000);
+    var intervalID = window.setInterval(poll, 3000);
 
     function poll() {
-        calculatePoints();
+        detectGym();
+        detectCoffee();
+        detectOutside();
     }
 
     detectMovement();
+}
+
+function detectGym() {
+    if(window.localStorage.getItem('gym') == 'true') {
+
+    }
+}
+
+function detectCoffee() {
+    console.log(window.localStorage.getItem('coffee'));
+    if(window.localStorage.getItem('coffee') == 'true') {
+        addCross('coffee');
+    }
+}
+
+function detectOutside() {
+    if(window.localStorage.getItem('outside') == 'true') {
+
+    }
 }
 
 function detectMovement() {

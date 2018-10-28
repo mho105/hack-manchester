@@ -12,7 +12,22 @@ function addTweet() {
     window.localStorage.setItem('tweets', strTweets);
     
     //get 'animal' and rehydrate it  (convert it back JSON)
-    var rehydratedAnimal = JSON.parse(window.localStorage.getItem('animal'));
+    //var rehydratedAnimal = JSON.parse(window.localStorage.getItem('animal'));
+}
 
-
+function changeLocation() {
+    var e = document.getElementById("location");
+    var location = e.options[e.selectedIndex].value;
+    
+    if(location === 'coffee') {
+        window.localStorage.setItem('coffee', true);
+    } 
+    
+    if(location === 'gym') {
+        window.localStorage.setItem('gym', true);
+    } 
+    
+    if (location = 'outside') {
+        window.localStorage.setItem('outside', true);
+    }
 }

@@ -5,12 +5,24 @@
     </head>
 
     <body>
+        <h2>Location</h2>
+        <form onsubmit="changeLocation()">
+            <select id="location">
+                <option>-</option>
+                <option value="coffee">Caffè Nero - 133 Deansgate, Saint Johns House, Manchester M3 3WR</option>
+                <option value="gym">Bannatyne Health Club - Regency House, 36-38 Whitworth St, Manchester M1 3NR</option>
+                <option value="outside">Saint John's Gardens - Lower Byrom St, Manchester M3 4AP</option>
+            </select>
+
+            <button>Change Location</button>
+        </form>
+
         <h2>Tweet</h2>
         <form>
             <textarea></textarea>
 
             <input type="text" value="2018-10-27T01:24:00" />
-            
+
             <button>Tweet</button>
         </form>
         <script type="text/javascript" src="mock.js"></script>
