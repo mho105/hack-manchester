@@ -18,8 +18,8 @@ function detectMovement() {
     window.addEventListener("devicemotion", handleMotion, true);
 
     function handleMotion(event) {
-        var r = event.acceleration;
-        console.log(r);
+        var r = event.accelerationIncludingGravity;
+        console.log(event);
         if(r.x !== null && r.y !== null && r.z !== null) {
             console.log('has moved');
             var element = document.getElementById('device');
