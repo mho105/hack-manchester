@@ -79,16 +79,12 @@ function detectTwitter() {
         return new Date(tweetTime) >= tenSecondsAgo;
     });
 
-    if (tweetsInLastSeconds.length)
+    if (tweetsInLastSeconds.length) {
+        addCross('twitter');
         subtractPoints(10);
+    }
     else
         addPoints(2);
-
-    //if(!hasTwitter && window.localStorage.getItem('twitter') == 'true') {
-    //    addCross('twitter');
-    //    subtractPoints();
-    //    hasTwitter = true;
-    //}
 }
 
 function detectMovement() {
