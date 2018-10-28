@@ -173,7 +173,7 @@ textarea[contenteditable] {
     height:50%;
     width:100%;
     overflow:auto;
-    padding:0 0 55px 0;
+    padding:-1px 0 55px 0;
 }
 
 .tasks ul {
@@ -326,4 +326,311 @@ textarea[contenteditable] {
 
 .selected-date {
     border:5px solid #B1CFF2;
+}
+
+a
+{
+  text-decoration: none;
+  color: #232323;
+  
+  transition: color 0.3s ease;
+}
+
+a:hover
+{
+  color: tomato;
+}
+
+#menuToggle
+{
+  display: block;
+  position: relative;
+  top: 75px;
+  left: 50px;
+  z-index: 999;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  -webkit-touch-callout: none;
+  
+}
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #cdcdcd;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+#menu
+{
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+
+.login-box {
+    background: #fff;
+    padding: 20px;
+    max-width: 300px;
+    margin: 25vh auto;
+    text-align: center;
+    letter-spacing: 1px;
+    position: relative;
+    border-radius: 10px;
+}
+
+.login-box:hover {
+	  box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.login-box h2 {
+    margin: 20px 0 20px;
+    padding: 0;
+    text-transform: uppercase;
+    color: #4688F1;
+}
+
+.social-button {
+	  background-position: 25px 0px;
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: inline-block;
+    height: 50px;
+	  line-height: 50px;
+    text-align: left;
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align: middle;
+    width: 100%;
+	  border-radius: 3px;
+    margin: 10px auto;
+    outline: rgb(255, 255, 255) none 0px;
+    padding-left: 20%;
+    transition: all 0.2s cubic-bezier(0.72, 0.01, 0.56, 1) 0s;
+	  -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+#facebook-connect {
+    background: rgb(255, 255, 255) url('https://eswarasai.com/projects/social-login/img/facebook.svg') no-repeat scroll 5px 0px / 30px 50px padding-box border-box;
+    border: 1px solid rgb(60, 90, 154);
+}
+
+#facebook-connect:hover {
+	  border-color: rgb(60, 90, 154);
+	  background: rgb(60, 90, 154) url('https://eswarasai.com/projects/social-login/img/facebook-white.svg') no-repeat scroll 5px 0px / 30px 50px padding-box border-box;
+	  -webkit-transition: all .8s ease-out;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease-out;
+}
+
+#facebook-connect span {
+	  box-sizing: border-box;
+    color: rgb(60, 90, 154);
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    border: 0px none rgb(255, 255, 255);
+    outline: rgb(255, 255, 255) none 0px;
+	  -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+#facebook-connect:hover span {
+	  color: #FFF;
+	  -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+#google-connect {
+    background: rgb(255, 255, 255) url('https://eswarasai.com/projects/social-login/img/google-plus.png') no-repeat scroll 5px 0px / 50px 50px padding-box border-box;
+    border: 1px solid rgb(220, 74, 61);
+}
+
+#google-connect:hover {
+	  border-color: rgb(220, 74, 61);
+	  background: rgb(220, 74, 61) url('https://eswarasai.com/projects/social-login/img/google-plus-white.png') no-repeat scroll 5px 0px / 50px 50px padding-box border-box;
+	  -webkit-transition: all .8s ease-out;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease-out;
+}
+
+#google-connect span {
+	  box-sizing: border-box;
+    color: rgb(220, 74, 61);
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    border: 0px none rgb(220, 74, 61);
+    outline: rgb(255, 255, 255) none 0px;
+	  -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+#google-connect:hover span {
+	  color: #FFF;
+	  -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+#twitter-connect {
+    background: rgb(255, 255, 255) url('https://eswarasai.com/projects/social-login/img/twitter.png') no-repeat scroll 5px 1px / 45px 45px padding-box border-box;
+    border: 1px solid rgb(85, 172, 238);
+}
+
+#twitter-connect:hover {
+	  border-color: rgb(85, 172, 238);
+	  background: rgb(85, 172, 238) url('https://eswarasai.com/projects/social-login/img/twitter-white.png') no-repeat scroll 5px 1px / 45px 45px padding-box border-box;
+	  -webkit-transition: all .8s ease-out;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease-out;
+}
+
+#twitter-connect span {
+	  box-sizing: border-box;
+    color: rgb(85, 172, 238);
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    border: 0px none rgb(220, 74, 61);
+    outline: rgb(255, 255, 255) none 0px;
+	  -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+#twitter-connect:hover span {
+	  color: #FFF;
+	  -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+#linkedin-connect {
+    background: rgb(255, 255, 255) url('https://eswarasai.com/projects/social-login/img/linkedin.svg') no-repeat scroll 13px 0px / 28px 45px padding-box border-box;
+    border: 1px solid rgb(0, 119, 181);
+}
+
+#linkedin-connect:hover {
+	  border-color: rgb(0, 119, 181);
+	  background: rgb(0, 119, 181) url('https://eswarasai.com/projects/social-login/img/linkedin-white.svg') no-repeat scroll 13px 0px / 28px 45px padding-box border-box;
+	  -webkit-transition: all .8s ease-out;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease-out;
+}
+
+#linkedin-connect span {
+	  box-sizing: border-box;
+    color: rgb(0, 119, 181);
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    border: 0px none rgb(0, 119, 181);
+    outline: rgb(255, 255, 255) none 0px;
+	  -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+#linkedin-connect:hover span {
+	  color: #FFF;
+	  -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
 }
